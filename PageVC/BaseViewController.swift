@@ -10,10 +10,15 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    var myType: PageNavViewBtnType = .all
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor.randomColor
+    }
+    
+    public func updateTable(frame: CGRect) {
+//        tableView?.frame = frame
     }
 
     override func didReceiveMemoryWarning() {

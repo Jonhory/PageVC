@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BBCE29AD1E8EB1E80068C0A4 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE29AC1E8EB1E80068C0A4 /* NavView.swift */; };
+		BBCE29AD1E8EB1E80068C0A4 /* PageNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE29AC1E8EB1E80068C0A4 /* PageNavView.swift */; };
 		BBCE29AF1E8EB1F20068C0A4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE29AE1E8EB1F20068C0A4 /* BaseViewController.swift */; };
 		BBCE29B11E8EB1FD0068C0A4 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCE29B01E8EB1FD0068C0A4 /* PageVC.swift */; };
 		BBD10EB11E8D567B007DAB30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD10EB01E8D567B007DAB30 /* AppDelegate.swift */; };
@@ -15,10 +15,11 @@
 		BBD10EB61E8D567B007DAB30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD10EB41E8D567B007DAB30 /* Main.storyboard */; };
 		BBD10EB81E8D567B007DAB30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBD10EB71E8D567B007DAB30 /* Assets.xcassets */; };
 		BBD10EBB1E8D567B007DAB30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBD10EB91E8D567B007DAB30 /* LaunchScreen.storyboard */; };
+		BBD619491E8F3F5800638D8B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD619481E8F3F5800638D8B /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BBCE29AC1E8EB1E80068C0A4 /* NavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
+		BBCE29AC1E8EB1E80068C0A4 /* PageNavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageNavView.swift; sourceTree = "<group>"; };
 		BBCE29AE1E8EB1F20068C0A4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		BBCE29B01E8EB1FD0068C0A4 /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		BBD10EAD1E8D567B007DAB30 /* PageVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +29,7 @@
 		BBD10EB71E8D567B007DAB30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BBD10EBA1E8D567B007DAB30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBD10EBC1E8D567B007DAB30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBD619481E8F3F5800638D8B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +65,9 @@
 				BBD10EB01E8D567B007DAB30 /* AppDelegate.swift */,
 				BBD10EB21E8D567B007DAB30 /* ViewController.swift */,
 				BBCE29B01E8EB1FD0068C0A4 /* PageVC.swift */,
-				BBCE29AC1E8EB1E80068C0A4 /* NavView.swift */,
+				BBCE29AC1E8EB1E80068C0A4 /* PageNavView.swift */,
 				BBCE29AE1E8EB1F20068C0A4 /* BaseViewController.swift */,
+				BBD619481E8F3F5800638D8B /* Helper.swift */,
 				BBD10EB41E8D567B007DAB30 /* Main.storyboard */,
 				BBD10EB71E8D567B007DAB30 /* Assets.xcassets */,
 				BBD10EB91E8D567B007DAB30 /* LaunchScreen.storyboard */,
@@ -145,11 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBCE29AD1E8EB1E80068C0A4 /* NavView.swift in Sources */,
+				BBCE29AD1E8EB1E80068C0A4 /* PageNavView.swift in Sources */,
 				BBCE29B11E8EB1FD0068C0A4 /* PageVC.swift in Sources */,
 				BBCE29AF1E8EB1F20068C0A4 /* BaseViewController.swift in Sources */,
 				BBD10EB31E8D567B007DAB30 /* ViewController.swift in Sources */,
 				BBD10EB11E8D567B007DAB30 /* AppDelegate.swift in Sources */,
+				BBD619491E8F3F5800638D8B /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

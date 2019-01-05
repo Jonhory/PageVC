@@ -12,6 +12,30 @@ func iPhonePlus() -> Bool {
     return SCREEN_W > 375
 }
 
+func iPhoneX() -> Bool {
+    return (SCREEN_W == 375.0 && SCREEN_H == 812.0) || (SCREEN_W == 414.0 && SCREEN_H == 896.0)
+}
+
+/// 83 / 49
+func TabbarHeight() -> CGFloat {
+    return iPhoneX() ? (49.0 + TabbarSafeBottomMargin()) : 49.0
+}
+
+/// 34 / 0
+func TabbarSafeBottomMargin() -> CGFloat {
+    return iPhoneX() ? 34.0 : 0.0
+}
+
+/// 状态栏高度 40/20
+func StatusBarHeight() -> CGFloat {
+    return iPhoneX() ? 40 : 20
+}
+
+/// 导航栏高度 84/64
+func NavigationBarHeight() -> CGFloat {
+    return StatusBarHeight() + 44
+}
+
 let SCREEN = UIScreen.main.bounds.size
 let SCREEN_W = SCREEN.width
 let SCREEN_H = SCREEN.height

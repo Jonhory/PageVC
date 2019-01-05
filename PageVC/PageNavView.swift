@@ -9,6 +9,7 @@
 import UIKit
 
 enum PageNavViewBtnType: Int {
+    
     case all = 534
     case waitPay
     case waitAudit
@@ -17,7 +18,22 @@ enum PageNavViewBtnType: Int {
     case finished
 }
 
+extension PageNavViewBtnType {
+    
+    var index: Int {
+        switch self {
+        case .all: return 0
+        case .waitPay: return 1
+        case .waitAudit: return 2
+        case .waitGetGoods: return 3
+        case .waitEvaluation: return 4
+        case .finished: return 5
+        }
+    }
+}
+
 protocol PageNavViewDelegate: class {
+    
     func navViewClick(type: PageNavViewBtnType)
 }
 

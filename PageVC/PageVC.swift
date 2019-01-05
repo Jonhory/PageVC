@@ -10,7 +10,6 @@ import UIKit
 
 class PageVC: UIViewController {
 
-    
     var orderType: PageNavViewBtnType = .all
     var currentVC: BaseViewController?
     
@@ -33,15 +32,16 @@ class PageVC: UIViewController {
         loadUI()
         loadChildView()
         loadCurrentType()
+        
     }
 
     private func loadUI() {
-        let fn = CGRect(x: 0, y: 64, width: SCREEN_W, height: 49+6)
+        let fn = CGRect(x: 0, y: NavigationBarHeight(), width: SCREEN_W, height: 49+6)
         navView = PageNavView(frame: fn)
         navView?.delegate = self
         view.addSubview(navView!)
         
-        let f = CGRect(x: 0, y: 64 + 49 + 6, width: SCREEN_W, height: SCREEN_H - 64 - 49 - 6)
+        let f = CGRect(x: 0, y: fn.maxY, width: SCREEN_W, height: SCREEN_H - fn.maxY)
         scrollView.frame = f
         scrollView.isPagingEnabled = true
         scrollView.backgroundColor = UIColor.gray
@@ -68,7 +68,7 @@ class PageVC: UIViewController {
     }
     
     private func loadCurrentType() {
-        let index = getIndexWith(type: orderType)
+        let index = orderType.index
         let point = CGPoint(x: CGFloat(index) * SCREEN_W, y: 0)
         scrollView.setContentOffset(point, animated: true)
         navView?.setTypeClicked(orderType)
@@ -102,17 +102,6 @@ class PageVC: UIViewController {
         return type
     }
     
-    func getIndexWith(type: PageNavViewBtnType) -> Int {
-        switch type {
-        case .all:            return 0
-        case .waitPay:        return 1
-        case .waitAudit:      return 2
-        case .waitGetGoods:   return 3
-        case .waitEvaluation: return 4
-        case .finished:       return 5
-        }
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -120,14 +109,16 @@ class PageVC: UIViewController {
 }
 
 extension PageVC: PageNavViewDelegate {
+    
     func navViewClick(type: PageNavViewBtnType) {
-        let index = getIndexWith(type: type)
+        let index = type.index
         let point = CGPoint(x: CGFloat(index) * SCREEN_W, y: 0)
         scrollView.setContentOffset(point, animated: true)
     }
 }
 
 extension PageVC: UIScrollViewDelegate {
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         loadBaseVCView(scrollView)
         let type = getType(with: scrollView)

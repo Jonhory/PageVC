@@ -26,9 +26,9 @@ func TabbarSafeBottomMargin() -> CGFloat {
     return iPhoneX() ? 34.0 : 0.0
 }
 
-/// 状态栏高度 40/20
+/// 状态栏高度 44/20
 func StatusBarHeight() -> CGFloat {
-    return iPhoneX() ? 40 : 20
+    return iPhoneX() ? 44 : 20
 }
 
 /// 导航栏高度 84/64

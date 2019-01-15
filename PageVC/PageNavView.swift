@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum PageNavViewBtnType: Int {
+enum PageNavViewBtnType: Int, CaseIterable {
     
     case all = 534
     case waitPay
@@ -30,6 +30,17 @@ extension PageNavViewBtnType {
         case .finished: return 5
         }
     }
+    
+    var desc: String {
+        switch self {
+        case .all: return "全部"
+        case .waitPay: return "待付款"
+        case .waitAudit: return "待审核"
+        case .waitGetGoods: return "待收货"
+        case .waitEvaluation: return "待评价"
+        case .finished: return "已完成"
+        }
+    }
 }
 
 protocol PageNavViewDelegate: class {
@@ -42,7 +53,7 @@ class PageNavView: UIView {
     weak var delegate: PageNavViewDelegate?
     // 跟MyOrderNavViewBtnType.all 保持一致
     private let myOrderNavViewTagBegin: Int = 534
-    let titles: [String] = ["全部", "待付款", "待审核", "待收货", "待评价", "已完成"]
+    let titles: [String] = PageNavViewBtnType.allCases.map { $0.desc }
     private var titleBtns: [String: UIButton] = [:]
 
     // 滑动背景
